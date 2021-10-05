@@ -28,8 +28,6 @@ namespace TaskTestSimbirSoft
 
             text = Regex.Replace(text, @"<(.|\n)*?>", "\n");
 
-            //logger.Warn($"{checkedURL} is invalid!");
-
             return text;
         }
 
