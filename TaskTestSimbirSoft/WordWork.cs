@@ -7,6 +7,7 @@ namespace TaskTestSimbirSoft
     public class WordWork
     {
         private readonly char[] delimiter = { ' ', ',', '.', '!', '?', '"', ';', ':', '/', '&', '#', '[', ']', '(', ')', '«', '»', '<', '>', '@', '{', '}', '+', '-', '*', '\n', '\r', '\t' };
+       
         Dictionary<string, int> _wordDict = new Dictionary<string, int>();
 
         private string ClearText(string text)
@@ -21,12 +22,12 @@ namespace TaskTestSimbirSoft
 
             while (text.IndexOf("<script") > 0)
             {
-                text = text.Replace(text.Substring(text.IndexOf("<script"), 
+                text = text.Replace(text.Substring(text.IndexOf("<script"),
                     text.IndexOf("</script>") - text.IndexOf("<script") + "</script>".Length), "\n");
             }
 
             text = Regex.Replace(text, @"<(.|\n)*?>", "\n");
-            
+
             return text;
         }
 
@@ -55,7 +56,7 @@ namespace TaskTestSimbirSoft
         {
             SplitWord(text);
 
-            foreach (var word in _wordDict) 
+            foreach (var word in _wordDict)
             {
                 Console.WriteLine($"{word.Key} - {word.Value}");
             }
