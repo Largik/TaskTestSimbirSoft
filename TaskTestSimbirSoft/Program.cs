@@ -18,7 +18,7 @@ namespace TaskTestSimbirSoft
             }
             else
             {
-                Console.WriteLine("URL is invalid!");
+                Console.WriteLine($"{url} is invalid!");
             }
         }
     }
